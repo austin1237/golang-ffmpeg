@@ -27,10 +27,14 @@ jobs:
 
 workflows:
   version: 2
-  jobs:
-    - build-and-push-docker-image:
-      filters:
-        branches:
-          only: 
-            - master
-            - dev
+  build-and-push-container:
+    jobs:
+             
+       - build-and-push:
+          requires: 
+            - build-node-lambdas
+          filters:
+            branches:
+              only: 
+                - master
+                - dev
