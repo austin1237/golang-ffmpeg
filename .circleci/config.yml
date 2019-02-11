@@ -31,8 +31,6 @@ workflows:
     jobs:
              
        - build-and-push:
-          requires: 
-            - build-node-lambdas
           filters:
             branches:
               only: 
