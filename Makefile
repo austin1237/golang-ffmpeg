@@ -8,12 +8,12 @@ DEV    := ${NAME}:dev
 
 .PHONY: build_prod
 build_prod:
-	@docker build -t ${IMG} ./clipstitcher
+	@docker build -t ${IMG} .
 	@docker tag ${IMG} ${LATEST}
 
 .PHONY: build_dev
 build_dev:
-	@docker build -t ${IMG}_dev ./clipstitcher
+	@docker build -t ${IMG}_dev .
 	@docker tag ${IMG}_dev ${DEV}
 
 .PHONY: hub_push
